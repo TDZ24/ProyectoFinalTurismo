@@ -1,0 +1,79 @@
+:root {
+    --azul-profundo: #0B3C5D;
+    --turquesa: #1CA7EC;
+    --menta: #7FDBDA;
+    --coral: #F95738;
+}
+
+
+body {
+    background-color: #A8DADC; 
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: var(--azul-profundo);
+    padding:14px 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+
+/* Card del formulario */
+.formulario-card {
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid #A8DADC; 
+}
+
+/* Título */
+.titulo-formulario {
+    color: #065A82; 
+    font-weight: bold;
+}
+
+/* Botón principal */
+.btn-reservar {
+    background-color: #008991; 
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #A8DADC; 
+    color: #065A82;
+}
+
+/* Inputs al hacer focus */
+.form-control:focus {
+    border-color: #008991;
+    box-shadow: 0 0 5px rgba(0, 137, 145, 0.5);
+}
+
+/* Error en inputs */
+input.error {
+    border: 2px solid #FFAAA5; 
+}
+
+/* Mensaje de éxito */
+.alert-success {
+    background-color: #A8DADC;
+    color: #065A82;
+    border: none;
+}
