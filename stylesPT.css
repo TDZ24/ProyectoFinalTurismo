@@ -1,4 +1,3 @@
-
 :root {
   --turquesa: #008991;
   --menta: #A8DADC;
@@ -15,6 +14,7 @@ body {
 /* NAVBAR */
 .navbar {
   background: var(--azul-profundo);
+  padding:14px 0;
 }
 
 .navbar-brand {
@@ -24,7 +24,7 @@ body {
 }
 
 .nav-link {
-  color: var(--menta) !important;
+  color: white !important;
   font-weight: 500;
 }
 
