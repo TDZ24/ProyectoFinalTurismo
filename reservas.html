@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reservas</title>
+</head>
+<body>
+
+<h1>Reservar Viaje</h1>
+
+<form id="formReserva">
+<input type="text" id="nombre" placeholder="Nombre" required>
+<input type="text" id="destino" placeholder="Destino" required>
+
+<button type="submit">Reservar</button>
+</form>
+
+<h2>Reservas realizadas</h2>
+
+<table border="1">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Destino</th>
+<th>Acción</th>
+</tr>
+</thead>
+
+<tbody id="tablaReservas"></tbody>
+</table>
+
+<script src="reservas.js"></script>
+
+</body>
+</html>
