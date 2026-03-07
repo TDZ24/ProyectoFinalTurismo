@@ -1,0 +1,141 @@
+:root {
+    --azul-profundo: #0B3C5D;
+    --turquesa: #1CA7EC;
+    --menta: #7FDBDA;
+    --coral: #F95738;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FFE1C6;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: var(--azul-profundo);
+    padding:14px 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+
+/* HERO */
+
+.hero-planes {
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    padding: 120px 20px;
+
+}
+
+.hero-planes h1 {
+
+    font-size: 48px;
+    font-weight: 700;
+
+}
+
+.hero-planes p {
+
+    font-size: 20px;
+
+}
+
+
+/* PLANES */
+
+.planes {
+
+    padding: 80px 0;
+
+}
+
+/* TARJETA PLAN */
+
+.plan-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    transition: 0.3s;
+
+}
+
+.plan-card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+.plan-img {
+
+    height: 200px;
+
+    object-fit: cover;
+
+    width: 100%;
+
+}
+
+.plan-body {
+
+    padding: 25px;
+
+}
+
+.plan-precio {
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    color: var(--turquesa);
+
+}
+
+.btn-plan {
+
+    background: var(--turquesa);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 10px 20px;
+
+    margin-top: 10px;
+
+}
+
+.btn-plan:hover {
+
+    background: var(--coral);
+
+}

@@ -1,0 +1,122 @@
+:root {
+    --azul-profundo: #0B3C5D;
+    --turquesa: #1CA7EC;
+    --menta: #7FDBDA;
+    --coral: #F95738;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FFE1C6;
+} 
+
+/* NAVBAR */
+.navbar {
+    background: var(--azul-profundo);
+    padding:14px 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white !important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.btn-logout {
+    background: #F95738;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+}
+
+/* HERO */
+
+.hero-nosotros {
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    padding: 120px 20px;
+
+}
+
+.hero-nosotros h1 {
+
+    font-size: 48px;
+    font-weight: 700;
+
+}
+
+.hero-nosotros p {
+
+    font-size: 20px;
+    max-width: 600px;
+    margin: auto;
+    
+
+}
+
+
+/* HISTORIA */
+
+.historia {
+
+    padding: 80px 0;
+
+}
+
+.historia h2 {
+
+    color: var(--azul-profundo);
+    font-weight: 700;
+
+}
+
+
+/* VALORES */
+
+.valores {
+
+    background: #0B3C5D;
+    padding: 80px 0;
+     color: white;
+
+    
+
+}
+
+.valor-card {
+
+    padding: 30px;
+    transition: 0.3s;
+    color: white;
+
+}
+
+.valor-card i {
+
+    font-size: 40px;
+    color: white;
+    margin-bottom: 15px;
+
+}
+
+.valor-card:hover {
+    transform: translateY(-8px);
+
+}
+
