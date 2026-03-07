@@ -1,53 +1,77 @@
 // --- DATOS DE DESTINOS (imágenes de Unsplash, free) ----------
 const destinos = [
   {
-    nombre: "Cartagena, Colombia",
-    descripcion: "Murallas coloniales, playas y cultura caribeña.",
-    precio: "Desde $350.000",
+    nombre: "Cabo San Juan, Colombia",
+    descripcion: "Transporte terrestre, entrada al Tayrona, seguro de asistencia medica, guia profesional.",
+    precio: "Desde $150.000",
     rating: 4.9,
-    imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    imagen: "https://images.unsplash.com/photo-1538821169352-a455f1f448b2?w=600&q=80",
     tag: "Más vendido"
   },
   {
-    nombre: "Medellín, Colombia",
-    descripcion: "La ciudad de la eterna primavera te espera.",
-    precio: "Desde $180.000",
+    nombre: "Palomino-Guajira, Colombia",
+    descripcion: "Transporte terrestre, desayuno, almuerzo, seguro de asistencia medica, guia profesional.",
+    precio: "Desde $110.000",
     rating: 4.8,
-    imagen: "https://images.unsplash.com/photo-1583997052103-b4a1cb974ce5?w=600&q=80",
-    tag: "Oferta"
-  },
-  {
-    nombre: "San Andrés",
-    descripcion: "Mar de los siete colores y arrecifes de coral.",
-    precio: "Desde $890.000",
-    rating: 4.9,
-    imagen: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
-    tag: "Popular"
-  },
-  {
-    nombre: "Salento, Quindío",
-    descripcion: "Valle del Cocora y café de origen colombiano.",
-    precio: "Desde $220.000",
-    rating: 4.7,
-    imagen: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
-    tag: "Naturaleza"
-  },
-  {
-    nombre: "Tayrona, Santa Marta",
-    descripcion: "Selva tropical que besa el mar Caribe.",
-    precio: "Desde $310.000",
-    rating: 4.8,
-    imagen: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80",
+    imagen: "https://images.unsplash.com/photo-1708526499808-46793ea32022?w=600&q=80",
     tag: "Aventura"
   },
   {
-    nombre: "Bogotá, Colombia",
-    descripcion: "Gastronomía, arte y arquitectura en la capital.",
+    nombre: "Bahia Concha, Colombia",
+    descripcion: "Transporte chiva, seguro de asistencia medica, almuerzo, guia profesional.",
+    precio: "Desde $100.000",
+    rating: 4.9,
+    imagen: "https://images.unsplash.com/photo-1595101445719-aaff4a444631?w=600&q=80",
+    tag: "Playa"
+  },
+  {
+    nombre: "Minca-Taganga, Colombia",
+    descripcion: "Transporte terrestre, desayuno, almuerzo, seguro de asistencia medica, transporte lancha, guia profesional.",
+    precio: "Desde $120.000",
+    rating: 4.7,
+    imagen: "https://images.unsplash.com/photo-1708716175154-32344ec0868a?w=600&q=80",
+    tag: "Naturaleza"
+  },
+  {
+    nombre: "Cartagena-Baru, Colombia",
+    descripcion: "Transporte terrestre, desayuno, almuerzo, historia-playa, seguro de asistencia medica, guia profesional.",
     precio: "Desde $150.000",
+    rating: 4.8,
+    imagen: "https://images.unsplash.com/photo-1715503485391-e34011335c66?w=600&q=80",
+    tag: "Top destino"
+  },
+  {
+    nombre: "Playa Blanca, Colombia",
+    descripcion: "Transporte lancha, Seguro de asistencia medica, almuerzo, entrada al acuario.",
+    precio: "Desde $134.000",
     rating: 4.6,
-    imagen: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
-    tag: "Ciudad"
-  }
+    imagen: "https://plus.unsplash.com/premium_photo-1683214474059-b57007fc4d49?w=600&q=80",
+    tag: "Relax"
+  },
+  {
+    nombre: "Remanso-Taganga, Colombia",
+    descripcion: "Transporte terrestre, almuerzo, careteo mas fotos, seguro de asistencia medica, guia profesional.",
+    precio: "Desde $100.000",
+    rating: 4.8,
+    imagen: "https://images.unsplash.com/photo-1549025227-2fd0b499aaae?w=600&q=80",
+    tag: "Snorkel"
+  },
+  {
+    nombre: "Playa Cristal, Colombia",
+    descripcion: "Transporte terrestre, entrada al Tayrona, transporte maritimo, seguro de asistencia medica, guia profesional.",
+    precio: "Desde $150.000",
+    rating: 4.8,
+    imagen: "https://plus.unsplash.com/premium_photo-1691675469394-f843e044e340?w=600&q=80",
+    tag: "Playa"
+  },
+    {
+    nombre: "Buritaca, Colombia",
+    descripcion: "Transporte chiva, almuerzo, seguro de asistencia medica, guia profesional.",
+    precio: "Desde $110.000",
+    rating: 4.8,
+    imagen: "https://plus.unsplash.com/premium_photo-1664117187513-ef8d723a0a69?w=600&q=80",
+    tag: "Rio y mar"
+  },
 ];
 
 const stats = [
