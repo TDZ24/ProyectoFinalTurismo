@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TurAventura - Reservas de Turismo</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-plane-departure me-2"></i>TurAventura
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item"><a class="nav-link" href="planes.html">Paquetes</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <div class="ms-auto">
+
+            <!-- Botón Iniciar Sesión -->
+            <a id="btnLogin" class="btn btn-outline-light" href="login.html">
+              Iniciar sesión
+            </a>
+
+            <!-- Botón Reservar Aquí (oculto al inicio) -->
+            <a id="btnReservar" class="btn btn-info d-none" href="reservas.html">
+              Reservar aquí
+            </a>
+
+            <button id="btnLogout" class="btn btn-logout d-none">
+              Cerrar sesión
+            </button>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-content px-3">
+      <h1>Descubre el mundo con nosotros</h1>
+      <p>Las mejores experiencias de viaje al mejor precio</p>
+      <a href="#destinos" class="btn-hero">
+        <i class="fas fa-compass me-2"></i>Ver destinos
+      </a>
+    </div>
+  </section>
+
+  <div class="container" id="reservar">
+    <div class="search-bar">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-3">
+          <label class="form-label fw-semibold"><i class="fas fa-map-marker-alt text-danger me-1"></i>Destino</label>
+          <input type="text" class="form-control" placeholder="¿A dónde vas?" />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label fw-semibold"><i class="fas fa-calendar-alt text-primary me-1"></i>Fecha de
+            salida</label>
+          <input type="date" class="form-control" />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label fw-semibold"><i class="fas fa-users text-success me-1"></i>Viajeros</label>
+          <select class="form-select">
+            <option>1 persona</option>
+            <option>2 personas</option>
+            <option>3-4 personas</option>
+            <option>Grupo (+5)</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-primary w-100 py-2 fw-bold">
+            <i class="fas fa-search me-2"></i>Buscar viaje
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="destinos" class="py-5 mt-4">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Destinos Populares</h2>
+        <p class="section-sub">Elige entre nuestros destinos más solicitados</p>
+      </div>
+      <div class="row g-4" id="destinos-container">
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section py-5">
+    <div class="container">
+      <div class="row text-center g-4" id="stats-container">
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" class="pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <h5><i class="fas fa-plane-departure me-2"></i>TurAventura</h5>
+          <p class="mt-2" style="font-size:0.9rem;">Tu agencia de confianza para reservas de turismo. Viaja con
+            seguridad, comodidad y al mejor precio.</p>
+        </div>
+        <div class="col-md-2">
+          <h5>Compañía</h5>
+          <ul class="list-unstyled mt-2">
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5>Servicios</h5>
+          <ul class="list-unstyled mt-2">
+            <li><a href="#">Vuelos</a></li>
+            <li><a href="#">Hoteles</a></li>
+            <li><a href="#">Paquetes</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled mt-2">
+            <li><i class="fas fa-phone me-2 text-primary"></i>+57 300 123 4567</li>
+            <li><i class="fas fa-envelope me-2 text-primary"></i>hola@turaventura.co</li>
+            <li><i class="fas fa-map-marker-alt me-2 text-primary"></i>Medellín, Antioquia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center py-3">
+        <small>© 2026 TurAventura. Todos los derechos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="login.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const logueado = localStorage.getItem("usuarioLogueado");
+      const btnLogin = document.getElementById("btnLogin");
+      const btnReservar = document.getElementById("btnReservar");
+      const btnLogout = document.getElementById("btnLogout");
+
+      if (logueado === "true") {
+        btnLogin.classList.add("d-none");
+        btnReservar.classList.remove("d-none");
+        btnLogout.classList.remove("d-none");
+      }
+
+      btnLogout.addEventListener("click", function () {
+        localStorage.removeItem("usuarioLogueado");
+        window.location.href = "index.html";
+      });
+
+    });
+  </script>
+</body>
+
+</html>
