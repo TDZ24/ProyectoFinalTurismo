@@ -1,0 +1,59 @@
+/* ===========================
+   VARIABLES GLOBALES
+   =========================== */
+:root {
+  --turquesa:      #008991;
+  --menta:         #A8DADC;
+  --coral:         #FFAAA5;
+  --arena:         #FFE1C6;
+  --azul-profundo: #065A82;
+  --coral-boton:   #F95738;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--arena);
+}
+
+/* ===========================
+   NAVBAR (compartido)
+   =========================== */
+.navbar {
+  background: var(--azul-profundo);
+  padding: 14px 0;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--menta) !important;
+}
+
+/* ===========================
+   BOTONES NAVBAR
+   =========================== */
+.btn-logout {
+  background-color: var(--coral-boton);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-logout:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
