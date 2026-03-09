@@ -1,6 +1,4 @@
-/* ===========================
-   HERO
-   =========================== */
+/*HERO*/
 #hero {
   position: relative;
   height: 90vh;
@@ -35,9 +33,7 @@
   color: white;
 }
 
-/* ===========================
-   SEARCH BAR
-   =========================== */
+/*SEARCH BAR*/
 .search-bar {
   background: white;
   border-radius: 16px;
@@ -56,9 +52,7 @@
   background-color: var(--coral-boton);
 }
 
-/* ===========================
-   SECCIÓN DESTINOS
-   =========================== */
+/*SECCIÓN DESTINOS*/
 .section-title {
   font-size: 2rem;
   font-weight: 700;
@@ -90,9 +84,7 @@
   font-weight: 600;
 }
 
-/* ===========================
-   ESTADÍSTICAS
-   =========================== */
+/*ESTADÍSTICAS*/
 .stats-section {
   background: linear-gradient(135deg, var(--azul-profundo), var(--turquesa));
   color: white;
@@ -103,9 +95,7 @@
   font-weight: 800;
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
+/* FOOTER */
 footer {
   background: var(--azul-profundo);
   color: var(--menta);

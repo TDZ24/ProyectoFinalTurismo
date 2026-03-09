@@ -1,6 +1,4 @@
-// ===========================
 // VALIDACIÓN FORMULARIO RESERVA
-// ===========================
 
 document.getElementById("formReserva").addEventListener("submit", function (e) {
   e.preventDefault();
