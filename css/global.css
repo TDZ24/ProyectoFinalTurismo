@@ -1,6 +1,4 @@
-/* ===========================
-   VARIABLES GLOBALES
-   =========================== */
+/*VARIABLES GLOBALES*/
 :root {
   --turquesa:      #008991;
   --menta:         #A8DADC;
@@ -15,9 +13,7 @@ body {
   background-color: var(--arena);
 }
 
-/* ===========================
-   NAVBAR (compartido)
-   =========================== */
+/*NAVBAR (compartido)*/
 .navbar {
   background: var(--azul-profundo);
   padding: 14px 0;
@@ -38,9 +34,7 @@ body {
   color: var(--menta) !important;
 }
 
-/* ===========================
-   BOTONES NAVBAR
-   =========================== */
+/*BOTONES NAVBAR */
 .btn-logout {
   background-color: var(--coral-boton);
   color: white;

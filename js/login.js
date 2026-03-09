@@ -1,6 +1,4 @@
-// ===========================
 // UTILIDADES
-// ===========================
 
 function obtenerUsuarios() {
   return JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -14,9 +12,7 @@ function validarEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// ===========================
 // REGISTRO
-// ===========================
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
@@ -63,9 +59,7 @@ if (registerForm) {
   });
 }
 
-// ===========================
 // LOGIN
-// ===========================
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {

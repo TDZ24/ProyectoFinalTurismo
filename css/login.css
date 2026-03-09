@@ -1,32 +1,24 @@
-/* ===========================
-   FONDO LOGIN
-   =========================== */
+/*FONDO LOGIN*/
 body {
   background: linear-gradient(135deg, #008991, #065A82);
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===========================
-   TARJETA
-   =========================== */
+/*TARJETA*/
 .login-card {
   border-radius: 20px;
   background: white;
   padding: 40px;
 }
 
-/* ===========================
-   TABS
-   =========================== */
+/*TABS*/
 .nav-tabs .nav-link.active {
   background-color: #008991;
   color: white;
   border-radius: 10px;
 }
 
-/* ===========================
-   BOTÓN PRINCIPAL
-   =========================== */
+/*BOTÓN PRINCIPAL*/
 .btn-main {
   background-color: #065A82;
   color: white;

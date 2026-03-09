@@ -1,6 +1,4 @@
-/* ===========================
-   HERO NOSOTROS
-   =========================== */
+/*HERO NOSOTROS */
 .hero-nosotros {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") center/cover no-repeat;
@@ -20,9 +18,7 @@
   margin: auto;
 }
 
-/* ===========================
-   HISTORIA
-   =========================== */
+/*HISTORIA*/
 .historia {
   padding: 80px 0;
 }
@@ -32,9 +28,7 @@
   font-weight: 700;
 }
 
-/* ===========================
-   VALORES
-   =========================== */
+/*VALORES*/
 .valores {
   background: #0B3C5D;
   padding: 80px 0;

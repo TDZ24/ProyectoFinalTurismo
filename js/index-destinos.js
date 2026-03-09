@@ -1,5 +1,5 @@
 const DESTINOS_INDEX = [
-  { pais: "Colombia",  precio: "$650",  emoji: "🏔️", img: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=400&h=260&fit=crop" },
+  { pais: "Colombia", precio: "$650", emoji: "🏔️", img: "https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" },
   { pais: "Peru",      precio: "$780",  emoji: "🦙", img: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=400&h=260&fit=crop" },
   { pais: "Spain",     precio: "$1,100",emoji: "💃", img: "https://images.unsplash.com/photo-1543785734-4b6e564642f8?w=400&h=260&fit=crop" },
   { pais: "Thailand",  precio: "$1,400",emoji: "🐘", img: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&h=260&fit=crop" },
