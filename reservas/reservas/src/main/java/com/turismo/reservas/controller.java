@@ -16,8 +16,8 @@ public class ReservaController {
         this.service = service;
     }
 
-    @GetMapping
-    public List<Reserva> listar() {
+   @GetMapping
+    public Reserva[] listar() {
         return service.listar();
     }
 

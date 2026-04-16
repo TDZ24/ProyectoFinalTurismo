@@ -14,11 +14,12 @@ public class ReservaService {
         this.repository = repository;
     }
 
-    public List<Reserva> listar() {
+       public Reserva[] listar() {
         return repository.listar();
     }
 
     public Reserva guardar(Reserva reserva) {
         return repository.guardar(reserva);
     }
+
 }

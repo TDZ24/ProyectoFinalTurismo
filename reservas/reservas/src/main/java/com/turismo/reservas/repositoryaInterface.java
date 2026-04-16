@@ -1,4 +1,4 @@
-package com.turismo.reservas.repository;
+package com.turismo.reservas.repositoryinterface;
 
 import com.turismo.reservas.model.Reserva;
 
