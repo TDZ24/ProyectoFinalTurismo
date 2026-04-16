@@ -1,6 +1,6 @@
 package com.turismo.reservas.service;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.service;
 import java.util.List;
 import com.turismo.reservas.model.Reserva;
 import com.turismo.reservas.repository.ReservaRepository;
