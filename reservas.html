@@ -86,6 +86,77 @@
             <!-- Mensaje éxito — empieza oculto con d-none -->
             <div id="mensajeExito" class="alert mt-3 d-none text-center"></div>
 
+            <hr class="my-4">
+
+<div class="text-center">
+  <button class="btn btn-secondary" onclick="mostrarReservas()">
+    <i class="fas fa-list me-2"></i>Mostrar reservas
+  </button>
+</div>
+
+<div class="table-responsive mt-4">
+  <table class="table table-striped d-none" id="tablaReservas">
+    <thead class="table-dark">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Destino</th>
+        <th>Fecha</th>
+        <th>Personas</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody id="contenidoTabla"></tbody>
+  </table>
+</div>
+<script>
+
+function mostrarReservas(){
+
+  const tabla = document.getElementById("tablaReservas");
+  const contenido = document.getElementById("contenidoTabla");
+
+  let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+  tabla.classList.remove("d-none");
+
+  contenido.innerHTML = "";
+
+  reservas.forEach((reserva, index) => {
+
+    contenido.innerHTML += `
+      <tr>
+        <td>${reserva.nombre}</td>
+        <td>${reserva.email}</td>
+        <td>${reserva.destino}</td>
+        <td>${reserva.fecha}</td>
+        <td>${reserva.personas}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" onclick="eliminarReserva(${index})">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    `;
+
+  });
+
+}
+
+function eliminarReserva(index){
+
+  let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+  reservas.splice(index,1);
+
+  localStorage.setItem("reservas", JSON.stringify(reservas));
+
+  mostrarReservas();
+
+}
+
+</script>
+
           </div>
         </div>
       </div>
