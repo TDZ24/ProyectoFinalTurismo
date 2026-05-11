@@ -12,6 +12,13 @@ function validarEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+const ADMIN_DEMO = {
+  nombre: "Administrador",
+  email: "admin@turaventura.co",
+  pass: "Admin123",
+  rol: "admin",
+};
+
 // REGISTRO
 const registerForm = document.getElementById("registerForm");
 
@@ -48,12 +55,13 @@ if (registerForm) {
     }
 
     // Guardar usuario nuevo en el arreglo de usuarios
-    usuarios.push({ nombre, email, pass });
+    usuarios.push({ nombre, email, pass, rol: "cliente" });
     guardarUsuarios(usuarios);
 
     // Marcar como logueado y guardar nombre
     localStorage.setItem("usuarioLogueado", "true");
     localStorage.setItem("nombreUsuario", nombre);
+    localStorage.setItem("rolUsuario", "cliente");
 
     window.location.href = "index.html";
   });
@@ -76,12 +84,15 @@ if (loginForm) {
     }
 
     const usuarios = obtenerUsuarios();
-    const usuario  = usuarios.find(u => u.email === email && u.pass === pass);
+    const usuario  = email === ADMIN_DEMO.email && pass === ADMIN_DEMO.pass
+      ? ADMIN_DEMO
+      : usuarios.find(u => u.email === email && u.pass === pass);
 
     if (usuario) {
       localStorage.setItem("usuarioLogueado", "true");
       localStorage.setItem("nombreUsuario", usuario.nombre);
-      window.location.href = "index.html";
+      localStorage.setItem("rolUsuario", usuario.rol || "cliente");
+      window.location.href = usuario.rol === "admin" ? "admin.html" : "index.html";
     } else {
       msg.innerHTML = "<span class='text-danger'>Correo o contraseña incorrectos</span>";
     }

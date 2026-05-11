@@ -16,18 +16,20 @@ body {
 /*NAVBAR (compartido)*/
 .navbar {
   background: var(--azul-profundo);
-  padding: 14px 0;
+  padding: 8px 0;
 }
 
 .navbar-brand {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: white !important;
 }
 
 .nav-link {
   color: white !important;
+  font-size: 0.95rem;
   font-weight: 500;
+  padding: 6px 10px !important;
 }
 
 .nav-link:hover {
@@ -50,4 +52,22 @@ body {
   transform: translateY(-2px);
   opacity: 0.9;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.navbar .btn {
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding-top: 10px;
+  }
+
+  .navbar .d-flex {
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
 }

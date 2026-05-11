@@ -24,7 +24,7 @@
 /*TARJETA PLAN */
 .plan-card {
   background: white;
-  border-radius: 18px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transition: 0.3s;
@@ -64,4 +64,20 @@
 .btn-plan:hover {
   background: var(--coral-boton);
   color: white;
+}
+
+.plan-detail {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  color: #5f6b72;
+  font-size: 0.9rem;
+}
+
+.plan-list {
+  padding-left: 18px;
+}
+
+.btn-outline-secondary {
+  border-radius: 25px;
 }

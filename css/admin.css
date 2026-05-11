@@ -1,0 +1,91 @@
+body {
+  background: #f4f8f9;
+}
+
+.admin-shell {
+  padding-bottom: 48px;
+}
+
+.admin-header {
+  background: linear-gradient(135deg, var(--azul-profundo), var(--turquesa));
+  color: white;
+  margin-bottom: 28px;
+  padding: 48px min(5vw, 56px);
+}
+
+.admin-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.admin-header p {
+  margin: 0;
+  max-width: 720px;
+}
+
+.admin-kicker {
+  color: var(--menta);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-stat,
+.admin-panel {
+  background: white;
+  border: 1px solid #dbe8ea;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(6, 90, 130, 0.08);
+}
+
+.admin-stat {
+  padding: 20px;
+}
+
+.admin-stat i {
+  color: var(--turquesa);
+}
+
+.admin-stat strong {
+  color: var(--azul-profundo);
+  display: block;
+  font-size: 1.8rem;
+}
+
+.admin-panel {
+  padding: 22px;
+}
+
+.panel-title {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.panel-title h2 {
+  color: var(--azul-profundo);
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.user-row,
+.destino-admin-card {
+  border: 1px solid #e1ecee;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.user-row + .user-row {
+  margin-top: 10px;
+}
+
+.destino-admin-card img {
+  border-radius: 6px;
+  height: 120px;
+  object-fit: cover;
+  width: 100%;
+}
