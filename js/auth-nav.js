@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function cerrarSesion() {
   localStorage.removeItem("usuarioLogueado");
   localStorage.removeItem("nombreUsuario");
@@ -13,13 +14,42 @@ function configurarNavbar() {
   const btnReservar = document.getElementById("btnReservar");
   const btnAdmin = document.getElementById("btnAdmin");
   const btnLogout = document.getElementById("btnLogout");
+=======
+// auth-nav.js — Integrado con backend
+
+async function cerrarSesion() {
+  try {
+    if (localStorage.getItem("token")) {
+      await apiLogout();
+    }
+  } catch (e) {
+    console.warn("Error al cerrar sesion en el servidor:", e.message);
+  } finally {
+    cerrarSesionLocal();
+    window.location.href = "index.html";
+  }
+}
+
+function configurarNavbar() {
+  const logueado = estaLogueado();
+  const nombre = localStorage.getItem("nombreUsuario") || "";
+  const rol = localStorage.getItem("rolUsuario") || "USER";
+  const btnLogin   = document.getElementById("btnLogin");
+  const btnReservar = document.getElementById("btnReservar");
+  const btnAdmin   = document.getElementById("btnAdmin");
+  const btnLogout  = document.getElementById("btnLogout");
+>>>>>>> master
 
   if (logueado) {
     btnLogin?.classList.add("d-none");
     btnReservar?.classList.remove("d-none");
     btnLogout?.classList.remove("d-none");
 
+<<<<<<< HEAD
     if (rol === "admin") {
+=======
+    if (esAdmin()) {
+>>>>>>> master
       btnAdmin?.classList.remove("d-none");
     }
 

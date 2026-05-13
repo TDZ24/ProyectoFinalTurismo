@@ -50,3 +50,31 @@
 .valor-card:hover {
   transform: translateY(-8px);
 }
+<<<<<<< HEAD
+=======
+
+/* FOOTER */
+footer {
+  background: var(--azul-profundo);
+  color: var(--menta);
+}
+
+footer h5 {
+  color: white;
+  font-weight: 700;
+}
+
+footer a {
+  color: var(--menta);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--turquesa);
+  color: var(--menta);
+}
+>>>>>>> master

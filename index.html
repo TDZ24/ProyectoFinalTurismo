@@ -22,7 +22,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+<<<<<<< HEAD
           <li class="nav-item"><a class="nav-link" href="#destinos">Destinos Colombia</a></li>
+=======
+          <li class="nav-item"><a class="nav-link" href="#destinos">Destinos </a></li>
+>>>>>>> master
           <li class="nav-item"><a class="nav-link" href="planes.html">Paquetes</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <div class="ms-auto d-flex gap-2 align-items-center">
@@ -47,6 +51,7 @@
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- BUSCADOR -->
   <div class="container" id="reservar">
     <div class="search-bar">
@@ -76,6 +81,38 @@
       </div>
     </div>
   </div>
+=======
+ <!-- BUSCADOR -->
+<div class="container" id="reservar">
+  <div class="search-bar">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label class="form-label fw-semibold"><i class="fas fa-map-marker-alt text-danger me-1"></i>Destino</label>
+        <input type="text" id="buscarDestino" class="form-control" placeholder="¿A dónde vas?" />
+      </div>
+      <div class="col-md-3">
+        <label class="form-label fw-semibold"><i class="fas fa-calendar-alt text-primary me-1"></i>Fecha de salida</label>
+        <input type="date" id="buscarFecha" class="form-control" />
+      </div>
+      <div class="col-md-3">
+        <label class="form-label fw-semibold"><i class="fas fa-users text-success me-1"></i>Viajeros</label>
+        <select id="buscarViajeros" class="form-select">
+          <option value="1">1 persona</option>
+          <option value="2">2 personas</option>
+          <option value="4">3-4 personas</option>
+          <option value="5">Grupo (+5)</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <button id="btnBuscar" class="btn btn-primary w-100 py-2 fw-bold">
+          <i class="fas fa-search me-2"></i>Buscar viaje
+        </button>
+      </div>
+    </div>
+    <div id="resultadosBusqueda" class="mt-3"></div>
+  </div>
+</div>
+>>>>>>> master
 
   <!-- DESTINOS -->
   <section id="destinos" class="py-5 mt-4">
@@ -136,7 +173,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/destinos-data.js"></script>
   <script src="js/index-destinos.js"></script>
+<<<<<<< HEAD
   <script src="js/auth-nav.js"></script>
+=======
+  <script src="js/api.js"></script>
+  <script src="js/auth-nav.js"></script>
+  <script src="js/buscador.js"></script>
+>>>>>>> master
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const logueado = localStorage.getItem("usuarioLogueado");
