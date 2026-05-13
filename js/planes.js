@@ -22,13 +22,22 @@ function crearTarjetaPlan(destino) {
         ? destino.caracteristicas.split(",").map(c => `<li>${c.trim()}</li>`).join("")
         : "");
 
-  const mapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(lugar + ", Colombia")}`;
+  const mapa   = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(lugar + ", Colombia")}`;
+  const favActivo = esFavorito(destino.id || destino.lugar);
+  const destinoJson = JSON.stringify(destino).replace(/"/g, "&quot;");
 
   return `
     <div class="col-md-6 col-lg-4">
       <article class="plan-card h-100 d-flex flex-column">
-        <img src="${img}" alt="${lugar}" class="plan-img"
-             onerror="this.src='${IMAGEN_DEFAULT}'">
+        <div class="position-relative">
+          <img src="${img}" alt="${lugar}" class="plan-img"
+               onerror="this.src='${IMAGEN_DEFAULT}'">
+          <button class="btn-favorito ${favActivo ? 'activo' : ''}"
+                  onclick="toggleFavorito(${destinoJson}, this)"
+                  title="${favActivo ? 'Quitar de favoritos' : 'Agregar a favoritos'}">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
         <div class="plan-body flex-grow-1 d-flex flex-column">
           <span class="badge bg-secondary mb-2">${depto}</span>
           <h5 class="fw-bold mb-1"><i class="${icono} me-2 text-primary"></i>${lugar}</h5>
@@ -58,7 +67,7 @@ function crearTarjetaPlan(destino) {
 
 async function cargarPlanes() {
   const params         = new URLSearchParams(window.location.search);
-  const destinoFiltro  = params.get("destino"); // puede ser "cartagena" o "7"
+  const destinoFiltro  = params.get("destino");
   const contenedor     = document.getElementById("planesContainer");
   const titulo         = document.querySelector(".planes h2");
   if (!contenedor) return;
@@ -66,10 +75,8 @@ async function cargarPlanes() {
   contenedor.innerHTML = `<div class="col-12 text-center py-5">
     <div class="spinner-border text-primary"></div></div>`;
 
-  // 1. Cargar estáticos
   const estaticos = obtenerDestinosColombia();
 
-  // 2. Cargar del backend
   let delBackend = [];
   try {
     const productos = await apiGetProductos();
@@ -78,12 +85,10 @@ async function cargarPlanes() {
     console.warn("Backend no disponible, usando solo estáticos.");
   }
 
-  // 3. Unir — evitar duplicados por nombre
   const nombresEstaticos = new Set(estaticos.map(d => (d.lugar || "").toLowerCase()));
   const backendNuevos = delBackend.filter(p => !nombresEstaticos.has((p.nombre || "").toLowerCase()));
   const todos = [...estaticos, ...backendNuevos];
 
-  // 4. Filtrar si viene ?destino=
   let lista = todos;
   if (destinoFiltro) {
     lista = todos.filter(d => {
@@ -94,7 +99,6 @@ async function cargarPlanes() {
     });
   }
 
-  // 5. Actualizar título
   if (titulo && destinoFiltro && lista.length) {
     const nombre = lista[0].lugar || lista[0].nombre || destinoFiltro;
     titulo.innerHTML = `Información de ${nombre}
@@ -103,7 +107,6 @@ async function cargarPlanes() {
       </a>`;
   }
 
-  // 6. Renderizar
   if (!lista.length) {
     contenedor.innerHTML = `
       <div class="col-12">

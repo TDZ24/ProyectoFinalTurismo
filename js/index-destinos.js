@@ -32,13 +32,19 @@ function crearTarjetaDestino(destino) {
   const icono  = destino.icono || "fas fa-map-marker-alt";
   const desc   = destino.descripcion || "";
   const id     = destino.id;
+  const esFav  = esFavorito(id);
 
   return `
     <div class="col-md-6 col-lg-4">
       <article class="destino-card card border-0 h-100">
-        <div class="destino-img-wrap">
+        <div class="destino-img-wrap position-relative">
           <img src="${img}" class="card-img-top destino-img" alt="${lugar}"
                onerror="this.src='${IMAGEN_DEFAULT}'">
+          <button class="btn-favorito ${esFav ? 'activo' : ''}" 
+                  onclick="toggleFavorito(${JSON.stringify(destino).replace(/"/g, '&quot;')}, this)"
+                  title="${esFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}">
+            <i class="fas fa-heart"></i>
+          </button>
         </div>
         <div class="card-body d-flex flex-column">
           <div class="d-flex justify-content-between align-items-start gap-2 mb-2">

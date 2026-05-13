@@ -18,6 +18,28 @@ let _confirmCallback = null;
 let _modalConfirmar = null;
 let _modalCategorizar = null;
 
+
+// ── Cloudinary ────────────────────────────────────────────────
+const CLOUDINARY_CLOUD = "dtsialzm5";
+const CLOUDINARY_PRESET = "turaventura";
+
+async function subirImagenCloudinary(file) {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", CLOUDINARY_PRESET);
+  formData.append("folder", "turaventura/destinos");
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD}/image/upload`,
+    { method: "POST", body: formData }
+  );
+  const data = await res.json();
+  if (!data.secure_url) throw new Error("Error subiendo imagen a Cloudinary");
+  return data.secure_url;
+}
+
+
+
 // ── Protección de ruta ───────────────────────────────────────────
 function protegerAdmin() {
   if (!estaLogueado() || !esAdmin()) {
@@ -114,8 +136,8 @@ async function renderReservas() {
           <div class="text-muted small">${r.usuario?.email || ""}</div>
         </td>
         <td>${r.producto?.nombre || "N/A"}</td>
-        <td>${r.fecha ? r.fecha.split("T")[0] : "N/A"}</td>
-        <td>${r.cantidadPersonas}</td>
+        <td>${r.fecha_creacion ? r.fecha_creacion.split("T")[0] : "N/A"}</td>
+        <td>${r.cantidad_personas ?? r.cantidadPersonas ?? "—"}</td>
         <td><span class="badge ${r.estado === "ACTIVA" ? "bg-success" : "bg-secondary"}">${r.estado}</span></td>
         <td class="text-end">
           ${r.estado === "ACTIVA" ? `
@@ -226,7 +248,9 @@ function filtrarProductos(texto) {
 async function configurarFormularioProducto() {
   await cargarCategoriasEnSelect("adminCategoria");
 
-  document.getElementById("formProductoAdmin")?.addEventListener("submit", async (e) => {
+
+
+document.getElementById("formProductoAdmin")?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const msg = document.getElementById("mensajeDestinoAdmin");
     const id = document.getElementById("productoEditandoId").value;
@@ -235,12 +259,33 @@ async function configurarFormularioProducto() {
       msg.innerHTML = `<span class="text-danger"><i class="fas fa-circle-exclamation me-1"></i>Selecciona una categoría.</span>`;
       return;
     }
+
+    // Subir imagen a Cloudinary si seleccionaron una
+    let imagenUrl = document.getElementById("adminImagen").value || null;
+    const fileInput = document.getElementById("adminImagenFile");
+    if (fileInput.files && fileInput.files[0]) {
+      const progress = document.getElementById("uploadProgress");
+      progress.style.display = "block";
+      try {
+        imagenUrl = await subirImagenCloudinary(fileInput.files[0]);
+      } catch (err) {
+        progress.style.display = "none";
+        msg.innerHTML = `<span class="text-danger"><i class="fas fa-circle-exclamation me-1"></i>Error subiendo imagen: ${err.message}</span>`;
+        return;
+      }
+      progress.style.display = "none";
+    }
+
     const payload = {
       nombre:      document.getElementById("adminLugar").value.trim(),
       descripcion: document.getElementById("adminDescripcion").value.trim(),
       precio:      parseFloat(document.getElementById("adminPrecio").value) || 0,
+      imagen:      imagenUrl,
       categoriaId,
     };
+
+
+
     try {
       if (id) {
         await apiEditarProducto(id, payload);
@@ -270,6 +315,11 @@ function cargarProductoEnFormulario(id) {
   document.getElementById("adminPrecio").value = p.precio || "";
   const catId = p.categoriaId || p.categoria?.id || "";
   document.getElementById("adminCategoria").value = catId;
+  document.getElementById("adminImagen").value = p.imagen || "";
+  const prev = document.getElementById("previewImagen");
+  if (prev && p.imagen) {
+    prev.innerHTML = `<img src="${p.imagen}" style="width:100%;height:120px;object-fit:cover;border-radius:8px;border:1px solid #dee2e6" onerror="this.style.display='none'">`;
+  }
   document.getElementById("tituloFormProducto").innerHTML =
     `<i class="fas fa-pen me-2 text-warning"></i>Editar producto`;
   document.getElementById("btnGuardarTexto").textContent = "Actualizar";
@@ -288,6 +338,8 @@ function cancelarEdicionProducto() {
   document.getElementById("btnGuardarTexto").textContent = "Guardar";
   document.getElementById("btnCancelarEdicion").style.display = "none";
   document.getElementById("mensajeDestinoAdmin").innerHTML = "";
+  const prev = document.getElementById("previewImagen");
+  if (prev) prev.innerHTML = "";
 }
 
 // ════════════════════════════════════════════════════════════════

@@ -9,6 +9,15 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/573001698105?text=¡Hola!%20Estoy%20interesado%20en%20conocer%20más%20sobre%20los%20destinos%20y%20paquetes%20turísticos%20de%20TurAventura%20🌍" 
+   target="_blank" 
+   class="whatsapp-float" 
+   title="Chatea con nosotros">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
 <body>
 
   <!-- NAVBAR -->
@@ -147,12 +156,24 @@
                   <label class="form-label">Precio (COP $)</label>
                   <input class="form-control" id="adminPrecio" type="number" min="0" step="any" placeholder="0">
                 </div>
+
                 <div class="col-12">
                   <label class="form-label">Categoría</label>
                   <select class="form-select" id="adminCategoria" required>
                     <option value="">Cargando categorías...</option>
                   </select>
                 </div>
+
+                <div class="col-12">
+                  <label class="form-label">Imagen del destino</label>
+                  <input type="file" class="form-control" id="adminImagenFile" accept="image/*">
+                  <div id="previewImagen" class="mt-2"></div>
+                  <input type="hidden" id="adminImagen">
+                  <div id="uploadProgress" class="small text-muted mt-1" style="display:none">
+                    <div class="spinner-border spinner-border-sm me-1"></div>Subiendo imagen...
+                  </div>
+                </div>
+
                 <div class="col-12 d-flex gap-2">
                   <button class="btn btn-primary flex-fill" type="submit">
                     <i class="fas fa-save me-1"></i><span id="btnGuardarTexto">Guardar</span>
